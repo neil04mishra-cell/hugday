@@ -2,20 +2,20 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Hug Day ❤️</title>
+<title>Happy Kiss Day ❤️</title>
 
 <style>
 
 body{
  text-align:center;
  font-family:sans-serif;
- background:linear-gradient(135deg,#ffd6e7,#ffe4ec,#fff0f5);
+ background:linear-gradient(135deg,#ffccd5,#ffe4ec,#fff0f5);
  margin:0;
  padding:20px;
- overflow-y:auto; /* allows scrolling */
+ overflow-y:auto;
 }
 
-/* romantic container */
+/* container */
 .container{
  background:white;
  padding:25px;
@@ -26,11 +26,40 @@ body{
  width:95%;
 }
 
+/* medium heart */
+.heart{
+ position:relative;
+ width:110px;
+ height:110px;
+ background:#ff4d6d;
+ transform:rotate(-45deg);
+ margin:20px auto 10px auto;
+}
+.heart:before,
+.heart:after{
+ content:"";
+ position:absolute;
+ width:110px;
+ height:110px;
+ background:#ff4d6d;
+ border-radius:50%;
+}
+.heart:before{ top:-55px; left:0; }
+.heart:after{ left:55px; top:0; }
+
+/* text below heart */
+.kiss-title{
+ font-size:22px;
+ font-weight:bold;
+ color:#d63384;
+ margin-bottom:15px;
+}
+
 /* image */
-.hug-img{
+.kiss-img{
  width:280px;
  border-radius:15px;
- margin-top:15px;
+ margin-top:10px;
 }
 
 /* message */
@@ -56,7 +85,7 @@ button{
 /* video */
 #videoBox{
  display:none;
- margin-top:25px;
+ margin-top:30px;
 }
 
 video{
@@ -73,23 +102,31 @@ video{
 
 <div class="container">
 
-<h1>Happy Hug Day Mistuu ♥️</h1>
+<!-- medium heart -->
+<div class="heart"></div>
 
-<img src="hug.jpg" class="hug-img">
-
-<div class="msg">
-A hug from you feels like home… 🤗 <br><br>
-In your arms I find peace, warmth and my forever comfort. <br>
-I just want to hold you close and never let go 💖
+<!-- text BELOW heart -->
+<div class="kiss-title">
+Happy Kiss Day Mistuu 💋
 </div>
 
-<h3>I wanna hug you…</h3>
+<!-- image -->
+<img src="kiss.jpg" class="kiss-img">
 
-<button onclick="showVideo()">Click to hug me 🤗</button>
+<!-- message -->
+<div class="msg">
+Your kiss makes me forget everything… 💖 <br>
+I only have one addiction — and that's your kiss 💋
+</div>
 
+<h3>You wanna kiss me? 😚</h3>
+
+<button onclick="playKiss()">Touch me 💋</button>
+
+<!-- video -->
 <div id="videoBox">
-<video controls autoplay loop>
-  <source src="hugvideo.mp4" type="video/mp4">
+<video id="kissVideo" controls autoplay loop>
+  <source src="kissvideo.mp4" type="video/mp4">
 </video>
 </div>
 
@@ -97,12 +134,12 @@ I just want to hold you close and never let go 💖
 
 <script>
 
-function showVideo(){
+function playKiss(){
  document.getElementById("videoBox").style.display="block";
+ document.getElementById("kissVideo").play();
 
- /* auto scroll to video */
- document.getElementById("videoBox").scrollIntoView({ 
-   behavior: "smooth" 
+ document.getElementById("videoBox").scrollIntoView({
+   behavior: "smooth"
  });
 }
 
