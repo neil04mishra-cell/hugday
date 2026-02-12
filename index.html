@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Hug Day ❤️</title>
+
+<style>
+
+body{
+ text-align:center;
+ font-family:sans-serif;
+ background:linear-gradient(135deg,#ffd6e7,#ffe4ec,#fff0f5);
+ margin:0;
+ padding:20px;
+ overflow-y:auto; /* allows scrolling */
+}
+
+/* romantic container */
+.container{
+ background:white;
+ padding:25px;
+ border-radius:20px;
+ display:inline-block;
+ box-shadow:0 10px 30px rgba(0,0,0,0.1);
+ max-width:420px;
+ width:95%;
+}
+
+/* image */
+.hug-img{
+ width:280px;
+ border-radius:15px;
+ margin-top:15px;
+}
+
+/* message */
+.msg{
+ font-size:18px;
+ margin-top:15px;
+ color:#d63384;
+ line-height:1.6;
+}
+
+/* button */
+button{
+ padding:12px 25px;
+ font-size:16px;
+ border:none;
+ border-radius:25px;
+ margin-top:15px;
+ cursor:pointer;
+ background:#ff4da6;
+ color:white;
+}
+
+/* video */
+#videoBox{
+ display:none;
+ margin-top:25px;
+}
+
+video{
+ width:100%;
+ max-width:320px;
+ border-radius:15px;
+ box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Happy Hug Day Mistuu ♥️</h1>
+
+<img src="hug.jpg" class="hug-img">
+
+<div class="msg">
+A hug from you feels like home… 🤗 <br><br>
+In your arms I find peace, warmth and my forever comfort. <br>
+I just want to hold you close and never let go 💖
+</div>
+
+<h3>I wanna hug you…</h3>
+
+<button onclick="showVideo()">Click to hug me 🤗</button>
+
+<div id="videoBox">
+<video controls autoplay loop>
+  <source src="hugvideo.mp4" type="video/mp4">
+</video>
+</div>
+
+</div>
+
+<script>
+
+function showVideo(){
+ document.getElementById("videoBox").style.display="block";
+
+ /* auto scroll to video */
+ document.getElementById("videoBox").scrollIntoView({ 
+   behavior: "smooth" 
+ });
+}
+
+</script>
+
+</body>
+</html>
